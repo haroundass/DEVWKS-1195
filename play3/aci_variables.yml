@@ -1,0 +1,15 @@
+---
+enforce:
+  - tenant_name: "devwks1195"
+    contract_name:  "u0X-cntr-800X"
+    contract_subject_name: "u0X-subj-800X"
+    reverse_filter: yes
+    filter_name: "u0X-fltr-800X"
+    entry_name: "port800X"
+    ether_type: "ip"
+    ip_protocol: "tcp"
+    dst_port_start: "800X"
+    dst_port_end: "800X"
+    app_profile_name: "app"
+    consumer_epg_name: "client"
+    provider_epg_name: "web"

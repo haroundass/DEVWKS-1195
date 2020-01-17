@@ -1,0 +1,22 @@
+---
+- name: play 2 
+  hosts: apic
+  connection: local
+  gather_facts: no
+  vars:
+    tenant: "devwks1195"
+
+  tasks:
+    - name: Create contract
+      aci_contract:
+        hostname: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        use_ssl: yes
+        validate_certs: false
+        #
+        tenant: "{{ tenant }}"
+        contract: u0X-cntr-01
+        description: client to web contract for port XX
+        scope: application-profile
+        state: present

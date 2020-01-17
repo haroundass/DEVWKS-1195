@@ -1,0 +1,21 @@
+---
+- name: play 1
+  hosts: apic
+  connection: local
+  gather_facts: no
+  vars:
+    username: "_username"
+    password: "_password"
+    tenant: "devwks1195"
+
+  tasks:
+    - name: Query Tenant
+      aci_tenant:
+        hostname: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        use_ssl: yes
+        validate_certs: false
+        #
+        tenant: "{{ tenant }}"
+        state: query
